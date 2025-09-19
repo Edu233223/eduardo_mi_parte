@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa de Estacionamiento</title>
+  <style>
+    body {font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0;}
+    .container {max-width: 800px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px;}
+    header {margin-bottom: 20px;}
+    header h1 {margin: 0; font-size: 20px;}
+    header p {margin: 0; font-size: 12px; color: gray;}
+    nav {display: flex; gap: 10px; margin: 15px 0;}
+    nav button {padding: 8px 12px; border: none; border-radius: 6px; background: #eee; cursor: pointer;}
+    nav .active {background: #007bff; color: #fff;}
+    .section {margin-bottom: 20px;}
+    .section h2 {margin: 0 0 10px 0; font-size: 18px;}
+    .mapa {border: 1px solid #ddd; border-radius: 6px; padding: 20px; text-align: center; margin-bottom: 20px; background: #fafafa;}
+    .mapa img {max-width: 100%; border-radius: 6px;}
+    .zona {border: 1px solid #ddd; border-radius: 6px; padding: 12px; margin-bottom: 10px;}
+    .zona h3 {margin: 0; font-size: 16px;}
+    .zona p {margin: 5px 0; font-size: 13px; color: gray;}
+    .detalles {display: flex; justify-content: space-between; align-items: center; font-size: 14px;}
+    .barra {height: 8px; border-radius: 6px; background: #ddd; margin-top: 6px;}
+    .barra div {height: 8px; border-radius: 6px; background: #28a745;}
+    .status {padding: 4px 8px; border-radius: 12px; font-size: 12px;}
+    .sin-acceso {background: #ccc; color: #333;}
+    .leyenda {border: 1px solid #ddd; border-radius: 6px; padding: 12px; font-size: 14px;}
+    .leyenda ul {margin: 0; padding: 0; list-style: none;}
+    .leyenda li {margin: 6px 0;}
+    .dot {display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px;}
+    .verde {background: #28a745;}
+    .amarillo {background: orange;}
+    .rojo {background: red;}
+    .gris {background: #ccc;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Parkeo’s</h1>
+      <p>Bienvenido de vuelta, Juan Pérez</p>
+    </header>
+
+    <nav>
+      <button>Resumen</button>
+      <button>Mi Código QR</button>
+      <button class="active">Mapa de Estacionamiento</button>
+    </nav>
+
+    <div class="section">
+      <h2>Mapa de Estacionamiento</h2>
+      <p>Disponibilidad de estacionamiento en tiempo real</p>
+      <div class="mapa">
+        <img src="https://via.placeholder.com/600x300?text=Mapa+de+Estacionamiento" alt="Mapa de Estacionamiento">
+      </div>
+    </div>
+
+    <div class="zona">
+      <h3>Zona de Motocicletas</h3>
+      <p>Área designada para motocicletas y scooters</p>
+      <div class="detalles">
+        <span>18 disponibles</span>
+        <span>32/50 ocupados</span>
+        <span>64% ocupado</span>
+      </div>
+      <div class="barra"><div style="width:64%"></div></div>
+    </div>
+
+    <div class="zona">
+      <h3>Zona de Autos - Estudiantes</h3>
+      <p>Área de estacionamiento reservada para estudiantes</p>
+      <div class="detalles">
+        <span>35 disponibles</span>
+        <span>85/120 ocupados</span>
+        <span>71% ocupado</span>
+      </div>
+      <div class="barra"><div style="width:71%"></div></div>
+    </div>
+
+    <div class="zona">
+      <h3>Zona de Profesores</h3>
+      <p>Estacionamiento reservado para miembros del profesorado</p>
+      <div class="detalles">
+        <span>35 disponibles</span>
+        <span>45/80 ocupados</span>
+        <span>56% ocupado</span>
+        <span class="status sin-acceso">Sin Acceso</span>
+      </div>
+      <div class="barra"><div style="width:56%"></div></div>
+    </div>
+
+    <div class="zona">
+      <h3>Zona de Visitantes</h3>
+      <p>Estacionamiento temporal para visitantes</p>
+      <div class="detalles">
+        <span>8 disponibles</span>
+        <span>22/30 ocupados</span>
+        <span>73% ocupado</span>
+        <span class="status sin-acceso">Sin Acceso</span>
+      </div>
+      <div class="barra"><div style="width:73%"></div></div>
+    </div>
+
+    <div class="leyenda">
+      <h3>Leyenda del Mapa</h3>
+      <ul>
+        <li><span class="dot verde"></span> Espacios disponibles (menos del 75% de capacidad)</li>
+        <li><span class="dot amarillo"></span> Espacios limitados (75-90% de capacidad)</li>
+        <li><span class="dot rojo"></span> Casi lleno (más del 90% de capacidad)</li>
+        <li><span class="dot gris"></span> Sin acceso para tu tipo de usuario</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
